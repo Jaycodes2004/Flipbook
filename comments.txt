@@ -1,0 +1,122 @@
+    <script>
+        function validateLoginForm() {
+            var username = document.getElementById("loginUsername").value;
+            var password = document.getElementById("loginPassword").value;
+            var usernameRegex = /^[a-zA-Z0-9_]+$/; // Only allow alphanumeric characters and underscores
+            var passwordRegex = /^[a-zA-Z0-9!@#$%^&*()_+]{6,}$/; // Password must be at least 6 characters long, and can contain these special characters
+
+            if (!username.match(usernameRegex)) {
+                alert("Username can only contain letters, numbers, and underscores.");
+                return false;
+            }
+
+            if (!password.match(passwordRegex)) {
+                alert("Password must be at least 6 characters long and can contain letters, numbers, and special characters (!@#$%^&*()_+).");
+                return false;
+            }
+
+            return true;
+        }
+
+        function validateSignupForm() {
+            var username = document.getElementById("signupUsername").value;
+            var password = document.getElementById("signupPassword").value;
+            var confirmPassword = document.getElementById("confirmPassword").value;
+            var usernameRegex = /^[a-zA-Z0-9_]+$/; // Only allow alphanumeric characters and underscores
+            var passwordRegex = /^[a-zA-Z0-9!@#$%^&*()_+]{6,}$/; // Password must be at least 6 characters long, and can contain these special characters
+
+            if (!username.match(usernameRegex)) {
+                alert("Username can only contain letters, numbers, and underscores.");
+                return false;
+            }
+
+            if (!password.match(passwordRegex)) {
+                alert("Password must be at least 6 characters long and can contain letters, numbers, and special characters (!@#$%^&*()_+).");
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Passwords do not match.");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+
+
+
+
+    
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+    <title>Login and Signup</title>
+    <style>
+        .form-container {
+            display: none;
+        }
+    </style>
+    <script>
+        function toggleForm(formName) {
+            var loginForm = document.getElementById('login-form');
+            var signupForm = document.getElementById('signup-form');
+
+            if (formName === 'login') {
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+            } else {
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'block';
+            }
+        }
+    </script>
+    <script src="./index.js" defer></script>
+</head>
+<body>
+    <h2>Login and Signup</h2>
+    
+    <button onclick="toggleForm('login')">Login</button>
+    <button onclick="toggleForm('signup')">Signup</button>
+
+    <div class="form-container" id="login-form">
+        <h3>Login</h3>
+        <form method="post" action="login.php">
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div>
+                <button type="submit" name="login">Login</button>
+            </div>
+        </form>
+    </div>
+
+    <div class="form-container" id="signup-form">
+        <h3>Signup</h3>
+        <form method="post" action="signup.php">
+            <div>
+                <label for="signupUsername">Username:</label>
+                <input type="text" id="signupUsername" name="signupUsername" required>
+            </div>
+            <div>
+                <label for="signupPassword">Password:</label>
+                <input type="password" id="signupPassword" name="signupPassword" required>
+            </div>
+            <div>
+                <label for="confirmPassword">Confirm Password:</label>
+                <input type="password" id="confirmPassword" name="confirmPassword" required>
+            </div>
+            <div>
+                <button type="submit" name="signup">Sign Up</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html> -->
+

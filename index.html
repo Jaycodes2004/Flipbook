@@ -1,0 +1,88 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login and Signup</title>
+    <style>
+        .form-container {
+            display: none;
+        }
+    </style>
+    <script>
+        function toggleForm(formName) {
+            var loginForm = document.getElementById('login-form');
+            var signupForm = document.getElementById('signup-form');
+
+            if (formName === 'login') {
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+            } else {
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'block';
+            }
+        }
+    </script>
+    <script src="./index.js" defer></script>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="container">
+        <div class="form-box" id="login-form">
+            <h2>Login</h2>
+            <form method="post" action="login.php">
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <button type="submit" name="login">Login</button>
+            </form>
+            <div class="form-switch">
+                <button onclick="toggleForm('signup')">Signup</button>
+            </div>
+        </div>
+        <div class="form-box" id="signup-form" style="display: none;">
+            <h2>Signup</h2>
+            <form method="post" action="signup.php">
+                <div>
+                    <label for="signupUsername">Username:</label>
+                    <input type="text" id="signupUsername" name="signupUsername" required>
+                </div>
+                <div>
+                    <label for="signupPassword">Password:</label>
+                    <input type="password" id="signupPassword" name="signupPassword" required>
+                </div>
+                <div>
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <button type="submit" name="signup">Sign Up</button>
+            </form>
+            <div class="form-switch">
+                <button onclick="toggleForm('login')">Login</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleForm(formName) {
+            var loginForm = document.getElementById('login-form');
+            var signupForm = document.getElementById('signup-form');
+
+            if (formName === 'login') {
+                loginForm.style.display = 'block';
+                signupForm.style.display = 'none';
+            } else {
+                loginForm.style.display = 'none';
+                signupForm.style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>
